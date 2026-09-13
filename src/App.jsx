@@ -423,6 +423,23 @@ export default function App() {
                 </div>
               </div>
 
+              {/* Exp 3 */}
+              <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+                <div className="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white dark:border-slate-950 bg-slate-300 dark:bg-slate-700 text-slate-600 dark:text-slate-300 shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                  <Bot className="w-4 h-4" />
+                </div>
+                <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-shadow">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-slate-500 dark:text-slate-400 font-bold text-sm">Past</span>
+                  </div>
+                  <h3 className="text-xl font-bold text-slate-900 dark:text-white">Savvy Digital</h3>
+                  <p className="text-slate-500 dark:text-slate-400 text-sm mb-4">Operations &amp; System Intern</p>
+                  <p className="text-slate-600 dark:text-slate-400 text-sm">
+                    Bertanggung jawab dalam infrastructure dan server management, automation dan workflow development, serta web tools dan system development.
+                  </p>
+                </div>
+              </div>
+
             </div>
           </div>
         </section>

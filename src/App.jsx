@@ -13,7 +13,7 @@ import {
   Code2,
   Briefcase
 } from 'lucide-react';
-import automationImage from './assets/auto.jpeg';
+import automationImage from './assets/csweb.png';
 
 // Custom SVG components for brand icons to prevent export errors
 const GithubIcon = ({ className }) => (
@@ -72,6 +72,13 @@ export default function App() {
 
   const additionalProjects = [
     {
+      id: 7,
+      title: 'Hermes Agent — Personal AI Agent & Automation',
+      description: 'Mengonfigurasi dan mengembangkan AI agent pribadi untuk mengotomasi workflow personal, termasuk manajemen email, integrasi Google Workspace, dan task tracking. Proyek ini menerapkan prompt engineering, function calling, tool orchestration, serta integrasi API menggunakan OAuth2.',
+      tech: ['Hermes Agent', 'Prompt Engineering', 'Function Calling', 'OAuth2', 'Google Sheets API'],
+      link: '#'
+    },
+    {
       id: 1,
       title: 'Skin Tone Classification for Outfit Recommendation',
       description: 'Mengembangkan sistem klasifikasi warna kulit untuk rekomendasi warna outfit menggunakan model MobileNetV2. Backend API dibangun dengan Flask dan frontend menggunakan React.js.',
@@ -87,9 +94,9 @@ export default function App() {
     },
     {
       id: 3,
-      title: 'ASABRI Data Automation with Selenium',
-      description: 'Membangun automation menggunakan Selenium untuk input data website ASABRI, integrasi data melalui API, lalu melakukan verifikasi terhadap data pembanding di file Excel.',
-      tech: ['Selenium', 'API Integration', 'Excel Validation'],
+      title: 'Web Automation Testing System',
+      description: 'Built a modular end-to-end web automation testing framework using Selenium and Python. Designed a data-driven testing architecture using JSON and Excel to execute multiple test scenarios (transactions, admin settings, ROI calculations).',
+      tech: ['Selenium', 'Python', 'JSON', 'Excel', 'API Validation'],
       link: '#'
     },
     {
@@ -324,12 +331,12 @@ export default function App() {
                     <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 text-xs font-bold uppercase tracking-wider">
                       Main Project
                     </div>
-                    <h3 className="text-3xl font-bold text-slate-900 dark:text-white">AI Article Automation Platform</h3>
+                    <h3 className="text-3xl font-bold text-slate-900 dark:text-white">Cleansound Studio</h3>
                     <p className="text-slate-600 dark:text-slate-400 text-lg leading-relaxed">
-                      Platform end-to-end untuk pembuatan konten otomatis untuk website Cleansound Studio. Melakukan scraping berita terkini, menulis ulang (rewrite) konten menggunakan API AI untuk menghindari plagiasi, dan langsung melakukan publikasi otomatis ke website.
+                      Membangun dan mengembangkan platform Cleansound Studio beserta backend dan sistem otomasi kontennya. Salah satu fitur utamanya adalah pipeline AI Article Automation yang melakukan scraping berita terkini, menulis ulang konten menggunakan AI API, dan mempublikasikannya secara otomatis ke website.
                     </p>
                     <div className="flex flex-wrap gap-2">
-                      {['n8n', 'AI API', 'Python', 'Backend'].map(tech => (
+                      {['Cleansound Studio', 'Django', 'n8n', 'AI API', 'Python', 'Backend'].map(tech => (
                         <span key={tech} className="px-3 py-1 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-sm font-medium text-slate-700 dark:text-slate-300">
                           {tech}
                         </span>
@@ -344,7 +351,7 @@ export default function App() {
                   <div className="w-full md:w-5/12 aspect-[4/3] rounded-2xl bg-slate-200 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 flex items-center justify-center relative overflow-hidden group-hover:shadow-[0_0_30px_rgba(59,130,246,0.2)] transition-all">
                      <img
                        src={automationImage}
-                       alt="Foto Salman Alfarizi Taha"
+                       alt="Cleansound Studio project preview"
                        className="h-full w-full object-cover object-center"
                      />
                      <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/10 to-transparent" />
@@ -357,9 +364,22 @@ export default function App() {
                 {additionalProjects.map((project) => (
                   <div key={project.id} className="group rounded-3xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-8 hover:-translate-y-2 hover:shadow-xl dark:hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)] transition-all duration-300 flex flex-col h-full">
                     <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">{project.title}</h3>
-                    <p className="text-slate-600 dark:text-slate-400 mb-8 flex-grow">
+                    {project.date && (
+                      <p className="text-sm font-medium text-blue-600 dark:text-blue-400 mb-1">{project.date}</p>
+                    )}
+                    {project.role && (
+                      <p className="text-sm font-medium text-slate-700 dark:text-slate-300 mb-4">{project.role}</p>
+                    )}
+                    <p className="text-slate-600 dark:text-slate-400 mb-4">
                       {project.description}
                     </p>
+                    {project.highlights && (
+                      <ul className="list-disc pl-5 space-y-2 text-slate-600 dark:text-slate-400 mb-8 flex-grow">
+                        {project.highlights.map(highlight => (
+                          <li key={highlight}>{highlight}</li>
+                        ))}
+                      </ul>
+                    )}
                     <div className="flex flex-col gap-6 mt-auto">
                       <div className="flex flex-wrap gap-2">
                         {project.tech.map(tech => (
